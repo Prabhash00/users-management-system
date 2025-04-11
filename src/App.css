@@ -1,0 +1,12 @@
+/* App.css */
+
+:root {
+  --primary: #F5ECE0;
+  --secondary: #5F99AE;
+  --accent: #8AB2A6;
+  --highlight: #E1EEBC;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.inputs {
+  @apply bg-gray-100 border p-1 rounded-[7px] shadow-sm transition-all duration-200 outline-none;
+}
+
+.inputs:focus {
+  border-color: #60B5FF;
+  box-shadow: 0 0 0 3px rgba(96, 181, 255, 0.4);
+  transform: scale(1.02);
+}
+
+.buttons {
+  @apply w-30 h-12 text-white cursor-pointer text-base font-bold text-center 
+  bg-[#FF9149] rounded-[10px] outline-none border-none transition-all duration-200 
+  ease-in-out delay-0 hover:bg-[#E57A2B] hover:scale-[0.95] shadow-xl;
+}
+
+
