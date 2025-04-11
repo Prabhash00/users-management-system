@@ -9,21 +9,33 @@ export const UserProvider = ({ children }) => {
   const [apiFetched, setApiFetched] = useState(false);
 
   
-  const fetchUsers = async () => {
-    if (apiFetched) return;
+  const addUser = async (newUser) => {
+  
+  if (!apiFetched) {
     try {
       const res = await axios.get("https://jsonplaceholder.typicode.com/users");
-      setUsers(res.data);
-      setApiFetched(true); 
+      setUsers([newUser, ...res.data]);
+      setApiFetched(true);
     } catch (error) {
       console.error("Error fetching users", error);
+      setUsers([newUser]); 
     }
-  };
+  } else {
+    
+    setUsers((prevUsers) => [newUser, ...prevUsers]);
+  }
+};
 
-  
-  const addUser = (user) => {
-    setUsers((prevUsers) => [user,...prevUsers]);
-  };
+const fetchUsers = async () => {
+  if (apiFetched) return;
+  try {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+    setUsers(res.data);
+    setApiFetched(true); 
+  } catch (error) {
+    console.error("Error fetching users", error);
+  }
+};
 
   
   const updateUser = (updatedUser) => {

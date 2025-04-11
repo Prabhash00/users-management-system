@@ -23,11 +23,9 @@ function AddUsers() {
       const res = await axios.post(
         "https://jsonplaceholder.typicode.com/users",
         peopleData
-      );  console.log("Response from API:", res);
+      ); 
       const newUser = { ...res.data, id: Date.now() };
-       console.log("Adding new user:", newUser);
       addUser(newUser); 
-      window.location.reload();
 
       setPeopleData({ name: "", username: "", email: "" });
     } catch (error) {
