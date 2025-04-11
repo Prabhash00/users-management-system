@@ -27,6 +27,7 @@ function AddUsers() {
       const newUser = { ...res.data, id: Date.now() };
        console.log("Adding new user:", newUser);
       addUser(newUser); 
+      window.location.reload();
 
       setPeopleData({ name: "", username: "", email: "" });
     } catch (error) {
