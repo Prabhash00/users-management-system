@@ -37,7 +37,7 @@ function UserList() {
       >
         Fetch Data
       </button>
-      {users.length === 0 ? (
+      {users.length === 0 ? ( 
         <p className="text-gray-600">No data is shown. Click on "Fetch Data" to display users.</p>
       ) : (
         <ol className="ml-2 space-y-4">
